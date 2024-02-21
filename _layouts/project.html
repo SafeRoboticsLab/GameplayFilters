@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <center>
+    <h1 style="font-size: 32px">{{page.title}}</h1>
+    {%- if page.authors -%}
+    <h2 style="font-size: 24px">
+      {%- for author in page.authors -%}
+        <a href="">{{author}}</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+      {%- endfor -%}
+    </h2>
+    {%- endif -%}
+    </h2>
+    
+    <br><br>
+    
+    {%- if page.video -%}
+    <table border="0" cellspacing="10" cellpadding="0" align="center"> 
+      <tbody><tr><td align="center" valign="middle">
+        <video muted="" autoplay="" loop="" width="95%">
+            <source src={{page.video}}>
+        </video>
+      </td></tr></tbody>
+    </table>
+    <br>
+    {%- endif -%}
+
+    {%- if page.figure -%}
+    <img src={{page.figure}}>
+    <br>
+    {%- endif -%}
+    
+    {%- if page.abstract -%}
+    <br><br>
+    <div style="max-width: 60%">
+      <p align="justify">
+        {{ page.abstract }}
+      </p>
+    </div>
+    {%- endif -%}
+
+    <br><br>
+
+  </center>
+  
+  <div class="post-content e-content" itemprop="articleBody" style="justify-content: center; align-content: center; display: flex;">
+    <div style="max-width: 75%;">
+      {{ content }}
+    </div>
+  </div>
+</article>
